@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./components/home";
+import Header from "./components/header";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div>
+      <Header />
+      <Home />
     </div>
   );
 }
-
-export default App;
