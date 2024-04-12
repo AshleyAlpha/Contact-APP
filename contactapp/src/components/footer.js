@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Footer = () => {
+export const Footer = () => {
   return (
-    <div>Footer</div>
+    <div style={{ width: "100%" }}>
+    <div className="bg-slate-50 h-24 w-full flex dm:flex-row sm:flex-row flex-col sm:justify-around md:justify-around sm:items-center md:items-center">
+        <h1 className="text-4xl text-blue-600 font-bold">Logoipsum</h1>
+        <p className="text-gray-600 mt-4">Copyright © 2024. All rights reserved.</p>
+    </div>
+</div>
+
   )
 }
-
-export default Footer
