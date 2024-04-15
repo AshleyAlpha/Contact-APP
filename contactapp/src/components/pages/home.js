@@ -8,7 +8,7 @@ const Home = () => {
       'https://contact-app-server-nxgi.onrender.com/api/v1/contactapp/contact/list'
     ).then((response) => {
       setContacts(response.data.contacts);
-      console.log(response.c);
+      console.log(response.data);
     }).catch((err)=>{
        alert("Fail");
     });
@@ -19,8 +19,14 @@ const Home = () => {
   }, []);
   return (
     <div className="bg-gray-100 flex flex-col justify-center items-center h-screen">
-      <div className="text-center text-orange-300 text-3xl mb-4">
-        Contacts are going to be displayed here
+      <div className="text-center text-black text-base mb-4">
+        {contacts.map((name,index)=>{
+          return <div key={index}>
+           <p>{name.fullName}</p>
+           <p>{name.email}</p>
+           <p>{name.phone}</p>
+          </div>
+        })}
       </div>
       <Link to="/create">
         <button className="px-4 py-2 bg-blue-500 text-white rounded">
