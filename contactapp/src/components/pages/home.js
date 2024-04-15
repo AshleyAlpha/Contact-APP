@@ -18,16 +18,28 @@ const Home = () => {
     FetchContacts();
   }, []);
   return (
+    
     <div className="bg-gray-100 flex flex-col justify-center items-center h-screen">
-      <div className="text-center text-black text-base mb-4">
+
+      <table className="text-center text-black text-base mb-4">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone_Number</th>
+          </tr>
+        </thead>
         {contacts.map((name,index)=>{
-          return <div key={index}>
-           <p>{name.fullName}</p>
-           <p>{name.email}</p>
-           <p>{name.phone}</p>
-          </div>
+          return <tbody key={index}>
+            
+           <td>{name.fullName}</td>
+           <td>{name.email}</td>
+           <td>{name.phone}</td>
+           <button>View</button>
+          </tbody>
         })}
-      </div>
+      </table>
+
       <Link to="/create">
         <button className="px-4 py-2 bg-blue-500 text-white rounded">
           Create Contact
