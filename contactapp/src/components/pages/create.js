@@ -1,6 +1,21 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Create = () => {
+ 
+  const [fullname, setFullname]=useState("");
+  const [email, setEmail]=useState("");
+  const [phone, setPhone]=useState("");
+  const navigate= useNavigate();
+  const newUser={fullname,email,phone}
+  const fetchUser=(()=>{
+    axios.post("https://contact-app-server-nxgi.onrender.com/api/v1/contactapp/contact/add",newUser).then((response)=>{
+
+console.log(response.data.contacts);
+navigate("/");
+    })
+  })
   return (
     <div>
        <div className="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md max-w-md">
@@ -16,7 +31,7 @@ const Create = () => {
               name="name"
               className="w-full p-2 border rounded-md"
               required
-            />
+             onChange={(e)=>{setFullname(e.target.value)}}/>
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block font-semibold mb-1">
@@ -28,7 +43,7 @@ const Create = () => {
               name="email"
               className="w-full p-2 border rounded-md"
               required
-            />
+             onChange={(e)=>{setEmail(e.target.value)}}/>
           </div>
           <div className="mb-4">
             <label htmlFor="number" className="block font-semibold mb-1">
@@ -40,7 +55,7 @@ const Create = () => {
               name="number"
               className="w-full p-2 border rounded-md"
               required
-            />
+              onChange={(e)=>{setPhone(e.target.value)}}/>
           </div>
           <div className="mb-4">
             <label htmlFor="picture" className="block font-semibold mb-1">
@@ -57,7 +72,7 @@ const Create = () => {
           </div>
           {/* <input type="submit" value="Submit" className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"/> */}
         </form>
-        <button className="bg-sky-800 text-white font-semibold py-2 px-4 hover:bg-cyan-700 cursor-pointer mt-4 w-full p-2 border rounded-md">
+        <button className="bg-sky-800 text-white font-semibold py-2 px-4 hover:bg-cyan-700 cursor-pointer mt-4 w-full p-2 border rounded-md" onClick={fetchUser}>
           Create
         </button>
       </div>

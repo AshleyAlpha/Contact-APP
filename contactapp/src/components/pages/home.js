@@ -32,10 +32,11 @@ const Home = () => {
         {contacts.map((name,index)=>{
           return <tbody key={index}>
             
-           <td>{name.fullName}</td>
+           <td>{name.fullname}</td>
            <td>{name.email}</td>
            <td>{name.phone}</td>
            <button>View</button>
+           <button>Delete</button>
           </tbody>
         })}
       </table>
