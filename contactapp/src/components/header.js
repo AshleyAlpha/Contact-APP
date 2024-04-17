@@ -9,6 +9,7 @@ const Header = () => {
           <Link to="/">
           <p className="text-gray-800 ml-4">Home</p>
           </Link>
+          
         </div>
       </div>
     </div>
