@@ -89,7 +89,7 @@ const Create = () => {
           {/* <input type="submit" value="Submit" className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"/> */}
         </form>
         <button
-          className="bg-sky-800 text-white font-semibold py-2 px-4 hover:bg-cyan-700 cursor-pointer mt-4 w-full p-2 border rounded-md"
+          className="bg-cyan-700 text-white font-semibold py-2 px-4 hover:bg-cyan-700 cursor-pointer mt-4 w-full p-2 border rounded-md"
           onClick={fetchUser}
         >
           Create

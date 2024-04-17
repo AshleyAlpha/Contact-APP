@@ -27,7 +27,7 @@ const Home = () => {
     <div className="bg-gray-100 min-h-screen py-8">
       <div className="max-w-4xl mx-auto px-4">
         <Link to="/create">
-          <button className="bg-cyan-500 text-white px-4 py-2 rounded">
+          <button className="bg-cyan-700 text-white px-4 py-2 rounded">
             Create Contact
           </button>
         </Link>
@@ -51,13 +51,17 @@ const Home = () => {
                 <td className="py-2 px-4">
                   <img
                     src={contact.picture}
-                    // alt={contact.fullName}
                     style={{ width: "50px", height: "50px" }}
+                    alt=""
                   />
                 </td>
-                <td className="py-2 px-4">
-                  <button className="bg-cyan-500 text-white px-3 py-1 rounded mr-2">View</button>
-                  <button className="bg-cyan-700 text-white px-3 py-1 rounded">Delete</button>
+                <td className="py-2 px-4" style={{ display: "flex" }}>
+                  <button className="bg-cyan-500 text-white px-3 py-1 rounded mr-2">
+                    View
+                  </button>
+                  <button className="bg-cyan-700 text-white px-3 py-1 rounded">
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
