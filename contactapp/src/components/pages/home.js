@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, params } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -33,46 +33,47 @@ const Home = () => {
         </Link>
 
         <div className="min-h-screen">
-          <div className="max-h-screen overflow-x-auto">
-            <table className="w-full table-auto border-collapse border border-gray-300 mt-8">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="py-2 px-4 border border-gray-300">Name</th>
-                  <th className="py-2 px-4 border border-gray-300">Email</th>
-                  <th className="py-2 px-4 border border-gray-300">Phone Number</th>
-                  <th className="py-2 px-4 border border-gray-300">Profile</th>
-                  <th className="py-2 px-4 border border-gray-300">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {contacts.map((contact, index) => (
-                  <tr key={index} className="border border-gray-300">
-                    <td className="py-2 px-4">{contact.fullName}</td>
-                    <td className="py-2 px-4">{contact.email}</td>
-                    <td className="py-2 px-4">{contact.phone}</td>
-                    <td className="py-2 px-4">
-                      <img
-                        src={contact.picture}
-                        style={{ width: "50px", height: "50px" }}
-                        alt=""
-                      />
-                    </td>
-                    <td className="py-2 px-4" style={{ display: "flex" }}>
+          {/* <div className="max-h-screen overflow-x-auto"> */}
+          <table className="w-full table-auto border-collapse border border-gray-300 mt-8">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2 px-4 border border-gray-300">Name</th>
+                <th className="py-2 px-4 border border-gray-300">Email</th>
+                <th className="py-2 px-4 border border-gray-300">
+                  Phone Number
+                </th>
+                <th className="py-2 px-4 border border-gray-300">Profile</th>
+                <th className="py-2 px-4 border border-gray-300">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contacts.map((contact, index) => (
+                <tr key={index} className="border border-gray-300">
+                  <td className="py-2 px-4">{contact.fullName}</td>
+                  <td className="py-2 px-4">{contact.email}</td>
+                  <td className="py-2 px-4">{contact.phone}</td>
+                  <td className="py-2 px-4">
+                    <img
+                      src={contact.picture}
+                      style={{ width: "50px", height: "50px" }}
+                      alt=""
+                    />
+                  </td>
+                  <td className="py-2 px-4" style={{ display: "flex" }}>
+                    <Link to={`/more/${contact._id}`}>
                       <button className="bg-cyan-500 text-white px-3 py-1 rounded mr-2">
                         View
                       </button>
-                      <button className="bg-cyan-700 text-white px-3 py-1 rounded">
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
