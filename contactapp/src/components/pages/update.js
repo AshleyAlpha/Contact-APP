@@ -22,7 +22,7 @@ const Update = () => {
       )
       .then((resp) => {
         console.log(resp.data);
-        alert("successful updated");
+        alert("Mise à jour réussie");
         navigate(`/details/${id}`);
       })
       .catch((error) => {

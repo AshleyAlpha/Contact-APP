@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 const Create = () => {
   const [fullName, setfullName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,6 +10,8 @@ const Create = () => {
   const [picture, setPicture] = useState("");
   const navigate = useNavigate();
   const newUser = { picture, fullName, email, phone };
+
+  
   const fetchUser = () => {
     axios
       .post(
