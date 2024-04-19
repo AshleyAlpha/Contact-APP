@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const More = () => {
   const { contactId } = useParams();
@@ -21,12 +22,14 @@ const More = () => {
         <p className="text-lg"><strong>Full Name:</strong> {contacts ? contacts.fullName : "error"}</p>
         <p className="text-lg"><strong>Email:</strong> {contacts ? contacts.email : "error"}</p>
         <p className="text-lg"><strong>Phone_Number:</strong> {contacts ? contacts.phone : "error"}</p>
-        <p className="text-lg"><strong>Phone_Number:</strong> {contacts ? contacts.picture : "error"}</p>
+        {/* <p className="text-lg"><strong>P:</strong> {contacts ? contacts.picture : "error"}</p> */}
       </div>
       <div className="mt-4 flex justify-center">
+      <Link to={`/update/${contactId}`}>
         <button className="bg-cyan-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mr-4">
           Update Contact
         </button>
+        </Link>
         <button className="bg-cyan-700 hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
           Delete Contact
         </button>

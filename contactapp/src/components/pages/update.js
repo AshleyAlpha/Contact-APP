@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +52,7 @@ const Update = () => {
   }, [contId]);
 
   return (
-    <div>
+    <div className='flex flex-col items-center justify-center'>
       <form>
         <label>Full name</label>
         <br></br>
@@ -101,7 +100,7 @@ const Update = () => {
 
         <button
           type="button"
-          className="w-96 h-12 border-2 mt-4 bg-black text-white"
+          className="w-96 h-12 border-2 mt-4 bg-cyan-700 text-white"
           onClick={(e) => updateContact(e, contId)}
         >
           Save Changes
