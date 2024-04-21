@@ -15,6 +15,11 @@ const Update = () => {
   const updateContact = (e, id) => {
     let updatedContact = { fullName, email, phone, picture };
 
+    if (!fullName || !email || !phone) {
+      alert("Please update out all fields.");
+      return; 
+    }
+
     axios
       .put(
         `https://contact-app-server-nxgi.onrender.com/api/v1/contactapp/contact/update?id=${id}`,

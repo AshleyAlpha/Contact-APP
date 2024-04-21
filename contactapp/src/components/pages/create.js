@@ -13,6 +13,12 @@ const Create = () => {
 
   
   const fetchUser = () => {
+
+    if (!fullName || !email || !phone) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
     axios
       .post(
         "https://contact-app-server-nxgi.onrender.com/api/v1/contactapp/contact/add",
